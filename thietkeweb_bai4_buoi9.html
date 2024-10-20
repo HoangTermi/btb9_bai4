@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Đăng Ký</title>
+    <link rel="stylesheet" href="">
+    <style>
+     body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.form-container {
+    width: 650px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h2 {
+    color: purple;
+    text-align: center;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.dob select {
+    width: 32%;
+    display: inline-block;
+}
+
+.radio-group input,
+.checkbox-group input {
+    margin-right: 10px;
+}
+
+.button-group {
+    display: flex;
+    justify-content:space-around
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: silver;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button[type="reset"] {
+    background-color: #ccc;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+}
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>FORM ĐĂNG KÝ</h2>
+        <form id="registrationForm">
+            <label for="ho">Họ:</label>
+            <input type="text" id="ho" name="ho">
+            <span class="error" id="hoError"></span>
+    
+            <label for="ten">Tên:</label>
+            <input type="text" id="ten" name="ten">
+            <span class="error" id="tenError"></span>
+    
+            <label for="ngaysinh">Ngày sinh:</label>
+            <div class="dob">
+                <select id="ngay" name="ngay">
+                </select>
+                <select id="thang" name="thang">
+                </select>
+                <select id="nam" name="nam">
+                </select>
+            </div>
+    
+            <label>Giới tính:</label>
+            <div class="radio-group">
+                <input type="radio" name="gioitinh" value="Nam"> Nam
+                <input type="radio" name="gioitinh" value="Nu"> Nữ
+            </div>
+    
+            <label for="sdt">Số điện thoại:</label>
+            <input type="text" id="sdt" name="sdt">
+            <span class="error" id="sdtError"></span>
+    
+            <label>Sở thích:</label>
+            <div class="checkbox-group">
+                <input type="checkbox" name="sothich" value="Doc sach"> Đọc sách
+                <input type="checkbox" name="sothich" value="Xem phim"> Xem phim
+                <input type="checkbox" name="sothich" value="Nghe nhac"> Nghe nhạc
+                <input type="checkbox" name="sothich" value="Da bong"> Đá bóng
+            </div>
+    
+            <label for="khac">Khác:</label>
+            <textarea id="khac" name="khac"></textarea>
+    
+            <div class="button-group">
+                <button type="button" onclick="validateForm()">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+    </div>
+
+<script src="b4_buoi9.js"></script>
+
+</body>
+</html>
